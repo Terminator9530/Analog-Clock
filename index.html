@@ -22,23 +22,50 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div class="polaroid" style="position: absolute;height: 700px;left: 350px;width: 800px;">
-        <canvas id="canvas" width="800" height="700"></canvas>
-        <canvas id="canvasS" width="300" height="300"></canvas>
-        <canvas id="canvasM" width="300" height="300"></canvas>
-        <canvas id="canvasH" width="300" height="300"></canvas>
+        <div id="draggable" style="cursor: move;position: absolute;left: 246px;top: 211px;">
+            <canvas id="canvas" width="300" height="300"></canvas>
+            <canvas id="canvasS" width="300" height="300"></canvas>
+            <canvas id="canvasM" width="300" height="300"></canvas>
+            <canvas id="canvasH" width="300" height="300"></canvas>
+        </div>
         <img src="https://www.elsetge.cat/imagepost/b/2/24920_home-wallpaper.jpg" id="imgCan">
     </div>
     <form name="f1">
-        <input name="r1" type="radio" value="s1">Style 1
-        <input name="r1" type="radio" value="s2">Style 2
-        <input name="r1" type="radio" value="s3" checked>Style 3
+        <div class="pretty p-icon p-round p-jelly">
+            <input name="r1" type="radio" value="s1">
+            <div class="state p-danger">
+                <i class="icon fa fa-check"></i>
+                <label>Style 1</label>
+            </div>
+        </div>
+        <div class="pretty p-icon p-round p-jelly">
+            <input name="r1" type="radio" value="s2">
+            <div class="state p-danger">
+                <i class="icon fa fa-check"></i>
+                <label>Style 2</label>
+            </div>
+        </div>
+        <div class="pretty p-icon p-round p-jelly">
+            <input name="r1" type="radio" value="s3">
+            <div class="state p-danger">
+                <i class="icon fa fa-check"></i>
+                <label>Style 3</label>
+            </div>
+        </div>
         <button type="submit" onclick="changeStyle(event)">Change</button>
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script>
+        $(function() {
+            $( "#draggable" ).draggable();
+        });
         var style={numbercolor:"black",secondcolor:"orange",minutecolor:"white",hourcolor:"white",stop1:"yellow",stop2:"white",clkback:"#383b39"};
         function changeStyle(e){
             e.preventDefault();
