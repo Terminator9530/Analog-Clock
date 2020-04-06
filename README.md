@@ -1,4 +1,9 @@
 # Analog-Clock
+
 Analog Clock Using HTML5 Canvas
 # Image
-<img src="" width="500" height="400">
+
+<center><img src="./clock.png" width="1000" height="600"></center>
+
+# Click Demo For Link
+https://terminator9530.github.io/Analog-Clock/
