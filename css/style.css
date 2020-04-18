@@ -1,0 +1,15 @@
+#canvas {
+    position: absolute;
+    z-index: 2;
+}
+
+#imgCan {
+    width: 802px;
+    height: 702px;
+    position: absolute;
+    z-index: 1;
+}
+
+.polaroid {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
